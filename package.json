@@ -1,5 +1,5 @@
 {
-  "name": "vendera-trading-company-react-markdown",
+  "name": "vendera-trading-company-react-network",
   "keywords": [
     "vendera-trading-company",
     "react",
@@ -8,7 +8,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vendera-trading-company/react-markdown.git"
+    "url": "git+https://github.com/vendera-trading-company/react-network.git"
   },
   "version": "1.0.0",
   "author": {

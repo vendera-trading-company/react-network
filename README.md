@@ -4,7 +4,7 @@
 Vendera Trading Company<br>
 651 N Broad Street<br>
 Suite 201<br>
-Middletown / Delware<br>
+Middletown / Delaware<br>
 United States<br>
 
 ## Author
