@@ -27,11 +27,17 @@ export class Request {
   }
 
   async run(): Promise<Response> {
-    const response = await fetch(this.requestBuilder.url, {
-      method: this.requestBuilder.method,
-      headers: this.requestBuilder.headerData,
-      body: this.requestBuilder.body,
-    });
+    var response = null;
+
+    try {
+      response = await fetch(this.requestBuilder.url, {
+        method: this.requestBuilder.method,
+        headers: this.requestBuilder.headerData,
+        body: this.requestBuilder.body,
+      });
+    } catch (e) {
+      console.log(e);
+    }
 
     return new Response(response);
   }
