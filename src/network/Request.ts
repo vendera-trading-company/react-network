@@ -31,6 +31,7 @@ export class Request {
 
     try {
       response = await fetch(this.requestBuilder.url, {
+        mode: this.requestBuilder.fetchMode,
         method: this.requestBuilder.method,
         headers: this.requestBuilder.headerData,
         body: this.requestBuilder.body,
@@ -48,6 +49,7 @@ class RequestBuilder {
   body: any;
   headerData: any;
   url: string;
+  fetchMode: any;
 
   constructor(method: string, url: string) {
     this.method = method;
@@ -55,11 +57,17 @@ class RequestBuilder {
   }
 
   json(body: any): RequestBuilder {
-    if (typeof body == "string") {
-      this.body = JSON.parse(body);
+    if (typeof body != "string") {
+      body = JSON.stringify(body);
     }
 
     this.body = body;
+
+    return this;
+  }
+
+  mode(fetchMode: "cors" | "navigate" | "same-origin" | "no-cors") {
+    this.fetchMode = fetchMode;
 
     return this;
   }
